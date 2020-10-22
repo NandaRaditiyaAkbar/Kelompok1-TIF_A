@@ -1,0 +1,13 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url(pipes.png);
+}
+fieldset{
+    margin : 100px auto;
+    width: 50%;
+    background-color: whitesmoke;
+}
+input:hover{
+    color: slateblue;
+    background-color: rgb(214, 236, 234);
+}

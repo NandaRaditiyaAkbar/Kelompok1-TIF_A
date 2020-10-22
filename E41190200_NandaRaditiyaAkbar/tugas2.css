@@ -1,0 +1,28 @@
+h2{
+	color: blue;
+    	font-family: 'Times New Roman', Times, serif;
+	text-align: center;
+}
+body{
+background: url('cutcube.png');
+}
+form{
+    width: 20%;
+    margin: auto;
+    margin-top: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px;
+    background: url('cutcube.png');
+}
+h1{
+    color: blue;
+	font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    width: 27%;
+    margin: auto;
+    margin-top: 70px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 1px;
+}

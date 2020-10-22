@@ -1,0 +1,18 @@
+body{
+    font-family:sans-serif;
+    background-image: url(../snow.png);
+}
+.FotoProfile{
+    width: 270px;
+    border-radius: 50%;
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+}
+.Desc{
+    font-family: sans-serif;
+    border: 100%;
+    border-style: solid;
+    border-color: black;
+    background-color: cyan;
+}

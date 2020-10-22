@@ -1,0 +1,20 @@
+body{
+	background-color: darkblue;
+}
+
+table{
+	border-color: white;
+	border-spacing: 2px;
+}
+
+th{
+	color: black;
+	text-align: center;
+	background-color: white;
+}
+
+td{
+	color: white;
+	font-size: 12px;
+	text-align: left;
+}

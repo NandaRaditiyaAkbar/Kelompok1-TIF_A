@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>membuat form</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <fieldset>
+    <center>
+    <h1>FORM DATA</h1>
+    <table>
+        <form action="target.html">
+        <tr><td><label for="id">ID KASIR</label></td>
+            <td><div class="input"><input type="text" placeholder="ID"></div></td>
+        </tr>
+        <td><label for="nama">NAMA KASIR</label></td>
+        <td><div class="input"><input type="text" placeholder="NAMA ANDA"></div></td>
+        <tr>
+            <td><label for="kota">KOTA</label></td>
+            <td>
+                <div class="input"><select name="kota">
+                    <option value="jember">JEMBER</option>
+                    <option value="bondowoso">BONDOWOSO</option>
+                    <option value="banyuwangi">BANYUWANGI</option>
+                    <option value="situbondo">SITUBONDO</option>
+                </select></div>
+            </td>
+        </tr>
+        <tr>
+            <td>TELEPON</td>
+            <td><div class="input"><input type="text" placeholder="+62"></div></td>
+        </tr>
+        <tr>
+            <td>GENDER</td>
+            <td><input type="radio" name="gend" id="L" value="laki">LAKI-LAKI
+                <input type="radio" name="gend" id="P" value="perempuan">PEREMPUAN</td>
+        </tr>
+        <tr>
+            <td>USERNAME</td>
+            <td><div class="input"><input type="text" placeholder="USER"></div></td>
+        </tr>
+        <tr>
+            <td>PASSWORD</td>
+            <td><div class="input"><input type="password" name="sandi" id="pw"></div></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="SAVE"></td>
+        </tr>
+    </form>
+    </table>
+</center>
+</fieldset>
+</body>
+</html>
