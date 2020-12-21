@@ -1,14 +1,17 @@
 <?php
 session_start();
-$email = $_POST['email'];
+include 'koneksi.php';
+$username = $_POST['username'];
 $password = $_POST['password'];
-$email_saya = "arvitaagusk88@gmail.com";
-$password_saya = 12345678;
-if((strcasecmp($email_saya, $email) == 0)&&($password_saya == $password)) {
-    session_start();
-    $_SESSION['email'] = $email;
+$query = mysqli_query($koneksi, "select * from user where username = '$username'");
+$data = mysqli_fetch_array($query);
+if($username == $data['username']){
+	if($password == $data['password']) {
+    $_SESSION['username'] = $username;
     header("location:index.php?pesan=berhasil");
+	}
 } else {
     header("location:login.php?pesan=gagal");
 }
 ?>
+
