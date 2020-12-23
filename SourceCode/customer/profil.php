@@ -39,10 +39,7 @@
             <blockquote style="font-size: medium;">
             <b>Profil Kami : </b>
             <br />
-            <b>Warung sunda Ibu Nana</b> adalah sebuah rumah makan yang menyediakan makanan khas sunda yang berlokasi di perum Graha Asri jl. Citanduy raya blok p no.9 Kab. Bekasi
-            <br/><br /> <b>Warung Sunda Ibu Nana</b> menerima pesanan makanan untuk catering, arisan, pesta dan nasi box. <br /> 
-            
-            
+            <b>Bakso Viral Jember</b> adalah rumah makan yang menyediakan berbagai jenis bakso yang kekinian. Setiap menunya diberi nama yang tidak kalah unik untuk menarik minat pelanggan. Penjualannya melayani delivery dengan sistem pembayaran Cash On Delivery (COD) 
             </blockquote>
             <!--<div class="title"><h3>Keranjang Anda</h3></div>
             <div class="hero-unit">
@@ -88,8 +85,8 @@
 						<div class="icons-box-vert">
 							<i class="ico-ok ico-color circle-color big"></i>
 							<div class="icons-box-vert-info">
-								<h3>Kualitas Terbaik</h3>
-								<p>Kami memberikan kualitas terbaik dalam pembuatan Kaos dengan Teknik Sablon DTG, Karena menurut kami kepuasan pelanggan adalah tujuan utama kami.
+							<h3>Pengiriman Cepat</h3>
+							<p>Delivery order Bakso Viral Jember siap mengirim pesanan anda secara gratis dengan radius maksimal 3 KM.</p>
 							</div>
 							<div class="clear"></div>
 						</div>
@@ -101,8 +98,8 @@
 						<div class="icons-box-vert">
 							<i class="ico-cup  ico-white circle-color-full big-color"></i>
 							<div class="icons-box-vert-info">
-								<h3>Kualitas Export</h3>
-								<p>Kami tidak hanya menjual produk ke dalam negeri saja melainkan kami juga menjual produk ke luar negeri.</p>
+							<h3>Rasa Juara</h3>
+							<p>Rasa dari Bakso Viral Jember memiliki cita rasa yang berbeda dari Bakso lainnya, di proses higienis dan dari bahan berkualitas.</p>
 							</div>
 							<div class="clear"></div>
 						</div>

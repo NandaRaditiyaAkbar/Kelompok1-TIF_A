@@ -85,8 +85,6 @@ if (isset($_SESSION['start_time'])) {
 $_SESSION['start_time'] = time();
 ?>
 <?php } ?>
-                                <!-- Menu Body -->
-                                <?php include "menu1.php"; ?>
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
                                     <div class="pull-left">

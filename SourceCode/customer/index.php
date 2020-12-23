@@ -18,24 +18,44 @@ if (empty($_SESSION['username'])){
 
 		<div id="da-slider" class="da-slider">
 			<div class="da-slide">
-				<h2>Bakso Judes</h2>
-				<p>Bakso daging sapi yang nikmat dipadukan dengan potongan cabai yang membuat merem melek karena rasa hotnya yang ga nahan</p>
+			<?php
+                    $query = mysqli_query($koneksi, "SELECT * FROM produk WHERE nama='bakso corona'");
+					$data  = mysqli_fetch_array($query);{
+                    ?>
+				<h2><?php echo $data['nama']; ?></h2>
+				<p><?php echo $data['keterangan']; ?></p>
 				<a href="produk.php" class="da-link">Lihat Produk</a>
-				<div class="da-img"><img src="../img/judes.jpeg" style="border: 3px solid whitesmoke; border-radius: 10px;" alt="image01" /></div>
+				<div class="da-img"><img src="../admin/<?php echo $data['gambar']; ?>" style="border: 3px solid whitesmoke; border-radius: 10px;" alt="image01" /></div>
+				<?php   
+              }
+              ?>
 			</div>
 			<div class="da-slide">
-				<h2>Bakso Telur</h2>
-				<p>Bakso daging sapi yang gurih dan nikmat berkolaborasi dengan telur didalamnya yang membuat rasanya semakin luar biasa enak</p>
+			<?php
+                    $query = mysqli_query($koneksi, "SELECT * FROM produk WHERE nama='bakso judes'");
+					$data  = mysqli_fetch_array($query);{
+                    ?>
+				<h2><?php echo $data['nama']; ?></h2>
+				<p><?php echo $data['keterangan']; ?></p>
 				<a href="produk.php" class="da-link">Lihat Produk</a>
-				<div class="da-img"><img src="../img/telur.jpeg" style="border: 3px solid whitesmoke; border-radius: 10px;" alt="image03" /></div>
-				
+				<div class="da-img"><img src="../admin/<?php echo $data['gambar']; ?>" style="border: 3px solid whitesmoke; border-radius: 10px;" alt="image01" /></div>
+				<?php   
+              }
+              ?>
 			</div>
 			<div class="da-slide">
-				<h2>Bakso Corona</h2>
-				<p>Bakso daging sapi yang dilapisi kriuknya mie, digoreng dan menghasilkan bakso corona yang kriuk diluar dan kenyal didalam</p>
+			<?php
+                    $query = mysqli_query($koneksi, "SELECT * FROM produk WHERE nama='bakso telur'");
+					$data  = mysqli_fetch_array($query);{
+                    ?>
+				<h2><?php echo $data['nama']; ?></h2>
+				<p><?php echo $data['keterangan']; ?></p>
 				<a href="produk.php" class="da-link">Lihat Produk</a>
-				<div class="da-img"><img src="../img/corona.jpeg" style="border: 3px solid whitesmoke; border-radius: 10px;" alt="image02" /></div>
-			</div>
+				<div class="da-img"><img src="../admin/<?php echo $data['gambar']; ?>" style="border: 3px solid whitesmoke; border-radius: 10px;" alt="image01" /></div>
+				<?php   
+              }
+              ?>
+				</div>
 			<nav class="da-arrows">
 				<span class="da-arrows-prev"></span>
 				<span class="da-arrows-next"></span>
@@ -68,7 +88,7 @@ if (empty($_SESSION['username'])){
             
       		<div class="row">
 	                <?php
-                    $sql = mysqli_query($koneksi, "SELECT * FROM produk ORDER BY kode DESC limit 9");
+                    $sql = mysqli_query($koneksi, "SELECT * FROM produk ORDER BY kode ASC");
                     while($data = mysqli_fetch_array($sql)){
                     ?>
         		<div class="span4">

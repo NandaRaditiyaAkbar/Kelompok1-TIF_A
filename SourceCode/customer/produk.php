@@ -44,7 +44,7 @@ if (empty($_SESSION['username'])){
             
       		<div class="row">
 	<?php
-                    $sql = mysqli_query($koneksi, "SELECT * FROM produk order by kode DESC");
+                    $sql = mysqli_query($koneksi, "SELECT * FROM produk order by kode ASC");
 	if(mysqli_num_rows($sql) == 0){
 		echo "Tidak ada produk!";
 	}else{

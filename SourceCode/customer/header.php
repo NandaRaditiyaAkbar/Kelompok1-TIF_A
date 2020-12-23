@@ -28,14 +28,7 @@
 			          		<div class="nav-collapse collapse">
 			            		<ul class="nav">
 			              			<li class="active"><a href="index.php">Home</a></li>
-                                    <li class="dropdown">
-			                			<a href="#" class="dropdown-toggle" data-toggle="dropdown">Menu</a>
-			                			<ul class="dropdown-menu">
-			                  				<li><a href="produk.php">Menu Makanan</a></li>
-			                			</ul>
-			              			</li>
-			              
-									<li><a href="testimoni.php">Testimonial</a></li>
+									<li><a href="produk.php">Menu</a></li>
                                     <li><a href="detail.php">Keranjang</a></li>
 			              			<li class="dropdown">
 			                			<a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: orange;"><b>Hi, <?php echo $_SESSION['fullname'] ?></b></a>

@@ -9,7 +9,7 @@ if (empty($_SESSION['username'])){
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Halaman Admin</title>
+        <title>Halaman Customer</title>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
         <link href="../dist/css/bootstrap.css" rel="stylesheet" type="text/css" />
         <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
@@ -42,7 +42,7 @@ if (empty($_SESSION['username'])){
         <header class="header">
             <a href="index.php" class="logo">
                 <!-- Add the class icon to your logo image or logo icon to add the margining -->
-                Administrator
+                Customer
             </a>
             <!-- Header Navbar: style can be found in header.less -->
             <nav class="navbar navbar-static-top" role="navigation">
@@ -85,8 +85,7 @@ if (isset($_SESSION['start_time'])) {
 $_SESSION['start_time'] = time();
 ?>
 <?php } ?>
-                                <!-- Menu Body -->
-                                <?php include "menu1.php"; ?>
+                                
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
                                     <div class="pull-left">
@@ -129,7 +128,7 @@ $_SESSION['start_time'] = time();
                 <section class="content-header">
                     <h1>
                         Konfirmasi
-                        <small>Administrator</small>
+                        <small>Customer</small>
                     </h1>
              <?php
              /**if(isset($_GET['hal']) == 'hapus'){

@@ -1,7 +1,7 @@
 <head>
 	<!-- start: Meta -->
 	<meta charset="utf-8">
-	<title>Distroit | Toko Online (Pro Version)</title> 
+	<title>Bakso Viral Jember</title> 
 	<meta name="description" content="Website, Corporate, Bekasi, Garment, Sablon, Konveksi"/>
 	<meta name="keywords" content="Bahan, Pakaian, Baju, Sablon" />
 	<!-- end: Meta -->
