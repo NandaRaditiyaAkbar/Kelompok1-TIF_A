@@ -14,7 +14,8 @@
 </head>
 <body>
     <center>
-    <h1>Selamat, anda berhasil login</h1>
+    <h1>Selamat, anda berhasil login <?php echo $_SESSION['username']; ?> </h1>
+
     <a href="logout.php">Logout</a>
 </center>
 </body>
