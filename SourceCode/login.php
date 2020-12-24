@@ -31,7 +31,7 @@
     <![endif]-->
   </head>
 
-  <body background="img/swirl_pattern.png">
+  <body background="img/bg.jpg">
 
     <div class="container">
 <!-- role="form" -->
@@ -95,7 +95,6 @@
     <br />
     <br />
     <br />
-    <br />
-    <center><h5 class="form-signin">Copyright &copy; <a href="#" data-toggle="modal" data-target="#contact"> www.hakkoblogd.com 2018</a></h5></center>       
+    <br />       
   </body>
 </html>
