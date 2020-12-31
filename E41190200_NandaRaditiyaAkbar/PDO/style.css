@@ -1,0 +1,51 @@
+body{
+	font-family: 'roboto';
+	color: #000;
+}
+
+.judul{
+	background: #000000;
+	padding: 10px;
+	text-align: center;
+}
+
+.judul h1,h2{
+	height: 15px;
+}
+.btn-info{
+	margin-right: 10px;
+}
+.btn-danger{
+margin-left: 10px;
+}
+.card-body .btn{
+
+	margin-bottom: 20px;
+}
+.tmb{
+	float: left;
+}
+.card-body {
+	margin-top: 20px;
+}
+.form-group{
+	margin-top: 20px;
+}
+a{
+	padding: 5px;
+	text-decoration: none;
+}
+
+.table{
+	border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+	text-align: center;
+}
+
+table.table th th, table.table tr td{
+	padding: 10px 20px;
+}
