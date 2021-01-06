@@ -41,7 +41,7 @@
         <input name="password" id="password" type="password" class="form-control" placeholder="Password" autocomplete="off" required>
         <button class="btn btn-lg btn-danger btn-block" type="submit">Sign in</button>
         <br />
-        <p>belum punya akun.? silahkan <a href="register.php"></b>Daftar</b></p></h5>
+        <p><font color="white">belum punya akun.? silahkan <a href="register.php"></b>Daftar</b></font></p></h5>
       </form>
 
     </div> <!-- /container -->
