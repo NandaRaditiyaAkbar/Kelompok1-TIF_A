@@ -121,7 +121,7 @@
 				<!-- start: Footer Menu Logo -->
 				<div class="span2">
 					<div id="footer-menu-logo">
-						<a href="#"><img src="img/logo.jpeg" alt="logo" /></a>
+						<a href="#"><img src="img/logo.jpg" alt="logo" height="30" width="30"/></a>
 					</div>
 				</div>
 				<!-- end: Footer Menu Logo -->
