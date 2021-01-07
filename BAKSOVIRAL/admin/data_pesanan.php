@@ -1,9 +1,9 @@
 <?php 
 session_start();
 if (empty($_SESSION['username'])){
-	header('location:../index.php');	
+    header('location:../index.php');    
 } else {
-	include "../conn.php";
+    include "../conn.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -131,139 +131,123 @@ $_SESSION['start_time'] = time();
                         Admin
                         <small>Administrator</small>
                     </h1>
+                    <?php
+             if(isset($_GET['hal']) == 'hapus'){
+                $id = $_GET['kd'];
+                $cek = mysqli_query($koneksi, "SELECT * FROM konfirmasi WHERE id_kon ='$id'");
+                if(mysqli_num_rows($cek) == 0){
+                    echo '<div class="alert alert-success alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> Data tidak ditemukan.</div>';
+                }else{
+                    $delete = mysqli_query($koneksi, "DELETE FROM konfirmasi WHERE id_kon='$id'");
+                    if($delete){
+                        echo '<div class="alert alert-primary alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> Data berhasil dihapus.</div>';
+                    }else{
+                        echo '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button> Data gagal dihapus.</div>';
+                    }
+                }
+            }
+            ?>
                     <ol class="breadcrumb">
-                        <li><a href="#"><i class="fa fa-dashboard"></i> Admin</a></li>
-                        <li class="active">Input Admin</li>
+                        <li><a href="#"><i class="fa fa-dashboard"></i> Laporan</a></li>
+                        <li class="active">Laporan Transaksi</li>
                     </ol>
+                </section>
+
                 </section>
 
                 <!-- Main content -->
                 <section class="content">
 
+                    <!-- Small boxes (Stat box) -->
+                    <div class="row">
+                    
+              <div class="col-lg-4">
+              <form action='laporan_po.php' method="POST">
+          
+           <input type='text' class="form-control" style="margin-bottom: 4px;" name='qcari' placeholder='Cari Laporan' required /> 
+           <input type='submit' value='Cari Data' class="btn btn-sm btn-primary" /> <a href='laporan_transaksi.php' class="btn btn-sm btn-success" >Refresh</i></a>
+            </div>
+              </div>
            <!-- /.row -->
                     <br />
                     <!-- Main row -->
                     <div class="row">
                         <div class="col-lg-12">
-                       <section>
-        <div class="container">
-        <div class="row">
-         <div class="col-sm-12"> <!--panel-->
-         <h2 class="text-center"><i class="fa fa-list fa-fw"></i> Daftar Konfirmasi Pembayaran</h2>
-            <div class="panel panel-default">
-                 <div class="panel-heading">
-                 <a href="buat_konfirmasi.php" title="Buat Konfirmasi Baru" class="btn btn-primary">Buat Konfirmasi</a>
-                 </div>
-                 <div class="panel-body">
-                 <!-- /.tabel responsive -->
-                                <div class="table-responsive">
-                                    <table class="table table-bordered table-striped">
-                                        <thead>
-                                            <tr>
-                                                <th>No</th>
-                                                <th>No. Transaksi</th>
-                                                <th>Nama Pemilik</th>
-                                                <th>Bank Asal</th>
-                                                <th>Jumlah Pembayaran</th>
-                                                <th>Tanggal Bayar</th>
-                                                <th>Bank Tujuan</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                        <?php
-                                        $pg = isset( $_GET['pg'] ) ? $_GET['pg'] : "";
-                                        $batas = 10; /*batas tampilan setiap halaman*/
-                                        if ( empty( $pg ) ) {
-                                        $posisi = 0;
-                                        $pg = 1;
-                                        } else {
-                                        $posisi = ( $pg - 1 ) * $batas;
-                                        }
-                                        /*Jika variabel $pg kosong maka akan menampilkan halaman pertama dengan batas baris 10*/
-
-                                    
-                                       /*mysql_num_rows untuk menghitung total baris di tabel databse*/
-                                        if($jumlah == 0){  //jika tidak ada data
-                                            ?>
-                                        <tr>
-                                            <td colspan="10">Tidak Terdapat Data</td>
-                                        </tr>
-                                        <?php
-                                        }else{
-                                        //jika ada data di tb_brand
-                                        while($a=mysqli_fetch_array($ambildata)){ /*mysql_fetch array untuk mengambil data di setiap field di tabel databse*/
-                                        ?>
-                                        <tr>
-                                            <td><?php echo $posisi=$posisi+1;?></td>
-                                            <td><?php echo $a['id_transaksi'];?></td>
-                                            <td><?php echo $a['nama_pemilik'];?></td>
-                                            <td><?php echo $a['bank_pengirim'];?></td>
-                                            <td><b>Rp. <?php echo number_format($a['jumlah']);?></b></td>
-                                            <td><?php echo tgl_indo($a['tgl_transfer']);?></td>
-                                            <td><?php echo $a['bank_tujuan'];?></td>
-
-                                        </tr>
-                                        <?php
-                                            }
-                                        }
-                                        ?>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <!-- /.tabel responsive -->
-
-                                <div class="text-center">
-                                    <?php
-                                //script paging, untuk menampikan setiap halaman
-                                $jml_data = mysqli_num_rows(mysqli_query($conect, "SELECT * FROM tb_konfirmasi order by id_konfirmasi desc"));
-                                $JmlHalaman = ceil($jml_data/$batas); //ceil digunakan untuk pembulatan keatas
-                                if($jml_data != 0){
-                                if ( $pg > 1 ) {
-                                $link = $pg-1;
-                                $prev = "<a href='?pg=$link'><button name='prev' class='btn btn-primary btn-sm'>Prev</button></a> ";
-                                } else {
-                                $prev = "<button name='prev' class='btn btn-default btn-sm'>Prev </button> ";
-                                }
-                                $nmr = '';
-                                for ( $i = 1; $i<= $JmlHalaman; $i++ ){
-
-                                if ( $i == $pg ) {
-                                $nmr .= "<button name='prev' class='btn btn-primary btn-sm'>$i</button> ";
-                                } else {
-                                $nmr .= "<a href='?pg=$i'><button name='prev' class='btn btn-default btn-sm'>$i</button></a> ";
-                                }
-                                }
-                                if ( $pg < $JmlHalaman ) {
-                                $link = $pg + 1;
-                                $next = "<a href='?pg=$link'><button name='prev' class='btn btn-primary btn-sm'>Next</button></a> ";
-                                } else {
-                                $next = "<button name='prev' class='btn btn-default btn-sm'>Next</button> ";
-                                }
-                                echo $prev.$nmr.$next;
-                                ?>
-                                <br><br>
-                                <span class="text-muted">Menampilkan <?php echo $jumlah; ?> dari <?php echo $jml_data; ?> Record </span>
-                                <?php
-                                }
-                                ?>
-                                </div>
-
-
-        </div>
-        </div>
-         </div>
-
-         </div>
-        </div>
-    </section>
-          		        </div><!-- col-lg-12--> 
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                        <h3 class="panel-title"><i class="fa fa-user"></i> Laporan Transaksi </h3> 
+                        </div>
+                        <div class="panel-body">
+                       <!-- <div class="table-responsive"> -->
+                    <?php
+                    $query1="select * from konfirmasi";
+                    
+                    if(isset($_POST['qcari'])){
+                   $qcari=$_POST['qcari'];
+                   $query1="SELECT * FROM  konfirmasi 
+                   where id_kon like '%$qcari%'
+                   or tanggal like '%$qcari%'  ";
+                    }
+                    $tampil=mysqli_query($koneksi, $query1) or die(mysqli_error());
+                    ?>
+                    <table id="example" class="table table-hover table-bordered">
+                  <thead>
+                      <tr>
+                        <th><center>ID </center></th>
+                        <th><center>No PO</i></center></th>
+                        <th><center>Kode Cust </center></th>
+                        <th><center>Pembayaran</center></th>
+                        <th><center>Tanggal </center></th>
+                        <th><center>Jumlah </center></th>
+                        <th><center>Status</center></th>
+                        <th><center>Tools </center></th>
+                      </tr>
+                  </thead>
+                     <?php 
+                     while($data2=mysqli_fetch_array($tampil))
+                    { ?>
+                    <tbody>
+                    <td><center><?php echo $data2['id_kon'];?></center></td>
+                    <td><center><?php echo $data2['nopo'];?></center></td>
+                    <td><center><?php echo $data2['kd_cus'];?></center></td>
+                    <td><center><?php echo $data2['bayar_via'];?></center></td>
+                    <td><center><?php echo $data2['tanggal'];?></center></td>
+                    <td><center>Rp. <?php echo number_format($data2['jumlah'],2,",",".");?></center></td>
+                    <td><center><?php
+                            if($data2['status'] == 'Bayar'){
+                                echo '<span class="label label-success">Sudah di Bayar</span>';
+                            }
+                            else if ($data2['status'] == 'Belum' ){
+                                echo '<span class="label label-danger">Belum di Bayar</span>';
+                            }
+                    
+                    ?>
+                    
+                    </center></td>
+                    <td><center>
+                    </div><div id="thanks"><a onclick="return confirm ('Yakin hapus <?php echo $data['id_kon'];?>?');" class="btn btn-sm btn-danger tooltips" data-placement="bottom" data-toggle="tooltip" title="Hapus Produk" href="laporan_transaksi.php?hal=hapus&kd=<?php echo $data2['id_kon'];?>"><span class="glyphicon glyphicon-trash"></a>
+                    </div></center></td>
+                    </tr></div>
+                 <?php   
+              } 
+              ?>
+                   </tbody>
+                   </table>
+                    
+                  <!-- </div>-->
+              </div> 
+              </div>   
+                  <!-- </div>-->
+                
+              </div> 
+              </div>
+            </div><!-- col-lg-12--> 
                     </div><!-- /.row (main row) -->
 
                 </section><!-- /.content -->
             </aside><!-- /.right-side -->
         </div><!-- ./wrapper -->
-
-
+          
         <script src="../dist/jquery.js"></script>
         <script src="../dist/js/bootstrap.min.js" type="text/javascript"></script>
         <script src="../js/jquery-ui.core.js" type="text/javascript"></script>

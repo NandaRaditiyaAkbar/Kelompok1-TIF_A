@@ -1,8 +1,8 @@
 <?php
 $db_host = "localhost";
-$db_user = "id15790180_baksoviral";
-$db_pass = "6a+VD<cz7S!T*#i#";
-$db_name = "id15790180_bakso";
+$db_user = "root";
+$db_pass = "";
+$db_name = "warnasol";
 
 $koneksi = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
 
