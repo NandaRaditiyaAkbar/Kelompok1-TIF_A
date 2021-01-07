@@ -210,7 +210,7 @@ $_SESSION['start_time'] = time();
                        
                     <?php
                     $kodeku = $_SESSION['user_id'];
-                    $query1="select * from po_terima where kd_cus='$kodeku'";
+                    $query1="select po_terima.*, produk.nama from po_terima LEFT JOIN produk ON po_terima.kode = produk.kode where kd_cus='$kodeku'";
                     $hasil=mysqli_query($koneksi, $query1) or die(mysqli_error());
                     ?>
                   <table id="example" class="table table-hover table-bordered">
@@ -218,7 +218,7 @@ $_SESSION['start_time'] = time();
                       <tr>
                         <th><center>ID </center></th>
                         <th><center>No PO</i></center></th>
-                        <th><center>Kode Produk </center></th>
+                        <th><center>Nama Produk </center></th>
                         <th><center>Tanggal </center></th>
                         <th><center>Qty </center></th>
                         <th><center>Total </center></th>
@@ -231,7 +231,7 @@ $_SESSION['start_time'] = time();
                     <tbody>
                     <td><center><?php echo $data['id'];?></center></td>
                     <td><center><?php echo $data['nopo'];?></center></td>
-                    <td><center><?php echo $data['kode'];?></center></td>
+                    <td><center><?php echo $data['nama'];?></center></td>
                     <td><center><?php echo $data['tanggal'];?></center></td>
                     <td><center><?php echo $data['qty'];?></center></td>
                     <td><center>Rp. <?php echo number_format($data['total'],2,",",".");?></center></td>
@@ -276,7 +276,7 @@ $_SESSION['start_time'] = time();
                        <!-- <div class="table-responsive"> -->
                     <?php
                     $kd = $_SESSION['user_id'];
-                    $query3="select * from konfirmasi where kd_cus='$kd'";
+                    $query3="select konfirmasi.*, customer.nama AS nama_cus from konfirmasi LEFT JOIN customer ON konfirmasi.kd_cus = customer.kd_cus where customer.kd_cus='$kd'";
                     $hasil2=mysqli_query($koneksi, $query3) or die(mysqli_error());
                     ?>
                   <table id="example" class="table table-hover table-bordered">
@@ -284,7 +284,7 @@ $_SESSION['start_time'] = time();
                       <tr>
                         <th><center>ID </center></th>
                         <th><center>No PO</i></center></th>
-                        <th><center>Kode Cust </center></th>
+                        <th><center>Nama Cust </center></th>
                         <th><center>Pembayaran</center></th>
                         <th><center>Tanggal </center></th>
                         <th><center>Jumlah </center></th>
@@ -298,7 +298,7 @@ $_SESSION['start_time'] = time();
                     <tbody>
                     <td><center><?php echo $data2['id_kon'];?></center></td>
                     <td><center><?php echo $data2['nopo'];?></center></td>
-                    <td><center><?php echo $data2['kd_cus'];?></center></td>
+                    <td><center><?php echo $data2['nama_cus'];?></center></td>
                     <td><center><?php echo $data2['bayar_via'];?></center></td>
                     <td><center><?php echo $data2['tanggal'];?></center></td>
                     <td><center>Rp. <?php echo number_format($data2['jumlah'],2,",",".");?></center></td>
