@@ -25,7 +25,7 @@
                             </a>
                             <ul class="treeview-menu">
                                 <li><a href="data_pesanan.php"><i class="fa fa-angle-double-right"></i> Data Pesanan</a></li>
-                                <li><a href="404.php"><i class="fa fa-angle-double-right"></i> Konfirmasi Pembayaran</a></li>
+                                <li><a href="konfirmasi.php"><i class="fa fa-angle-double-right"></i> Konfirmasi Pembayaran</a></li>
                                 <li><a href="404.php"><i class="fa fa-angle-double-right"></i> Status Pengiriman</a></li>
                             </ul>
                         </li>
