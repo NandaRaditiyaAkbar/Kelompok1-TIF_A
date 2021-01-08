@@ -48,7 +48,7 @@
                             </a>
                             <ul class="treeview-menu">
                                 <li><a href="laporan_po.php"><i class="fa fa-angle-double-right"></i> Laporan Purchase Order</a></li>
-                                <li><a href="404.php"><i class="fa fa-angle-double-right"></i> Laporan Product</a></li>
+                                <li><a href="data_pesanan.php"><i class="fa fa-angle-double-right"></i> Laporan Product</a></li>
                                 <li><a href="404.php"><i class="fa fa-angle-double-right"></i> Laporan Data Customer</a></li>
                             </ul>
                         </li>
