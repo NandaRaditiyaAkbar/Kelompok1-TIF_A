@@ -252,6 +252,13 @@ if (!empty($_FILES["nama_file"]["tmp_name"]))
                             <img src="<?php echo $row['gambar']; ?>" class="img-rounded" width="150" height="200" style="border: 2px solid #666;" /> 
                             </div>
                           </div>
+                           <div class="form-group">
+                              <label class="col-sm-2 col-sm-2 control-label">Foto</label>
+                              <div class="col-sm-3">
+                            <input name="nama_file" type="file" id="nama_file" class="form-control" required />
+                              
+                            </div>
+                          </div>
                         
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label"></label>
