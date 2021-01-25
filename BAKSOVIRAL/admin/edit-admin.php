@@ -1,9 +1,9 @@
 <?php 
 session_start();
 if (empty($_SESSION['username'])){
-	header('location:../index.php');	
+  header('location:../index.php');  
 } else {
-	include "../conn.php";
+  include "../conn.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -155,7 +155,7 @@ $_SESSION['start_time'] = time();
                         </div>
                         <div class="panel-body">
                   <div class="form-panel">
-                      <form class="form-horizontal style-form" action="update-admin.php" method="post" name="form1" id="form1">
+                      <form class="form-horizontal style-form" action="update-admin.php" method="post" enctype="multipart/form-data" name="form1" id="form1">
                           <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label">User ID</label>
                               <div class="col-sm-10">
@@ -188,17 +188,25 @@ $_SESSION['start_time'] = time();
                               </div>
                           </div>
                           <div class="form-group">
+                          
+                              <label class="col-sm-2 col-sm-2 control-label">Foto</label>
+                              <div class="col-sm-3">
+                            <input name="nama_file" type="file" id="nama_file" class="form-control" required />
+                              
+                            </div>
+                          </div>
+                          <div class="form-group">
                               <label class="col-sm-2 col-sm-2 control-label"></label>
                               <div class="col-sm-10">
-                                  <input type="submit" value="Simpan Data"  class="btn btn-sm btn-primary"/>&nbsp;
-	                              <a href="admin.php" class="btn btn-sm btn-danger">Batal </a>
+                                  <input type="submit" name="update" value="Simpan Data"  class="btn btn-sm btn-primary"/>&nbsp;
+                                <a href="admin.php" class="btn btn-sm btn-danger">Batal </a>
                               </div>
                           </div>
                       </form>
                   </div>
                   </div>
                   </div>
-          		</div><!-- col-lg-12--> 
+              </div><!-- col-lg-12--> 
                     </div><!-- /.row (main row) -->
 
                 </section><!-- /.content -->

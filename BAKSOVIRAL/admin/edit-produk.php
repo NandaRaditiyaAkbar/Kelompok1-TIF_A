@@ -166,7 +166,7 @@ if (!empty($_FILES["nama_file"]["tmp_name"]))
 	{			
 		$gambar = $namafolder . basename($_FILES['nama_file']['name']);		
 		if (move_uploaded_file($_FILES['nama_file']['tmp_name'], $gambar)) {
-			$sql="UPDATE produk SET nama='$nama', jenis='$jenis', harga='$harga', keterangan='$keterangan', stok='$stok' WHERE kode='$kode'" or die(mysqli_error());
+			$sql="UPDATE produk SET nama='$nama', jenis='$jenis', harga='$harga', keterangan='$keterangan', stok='$stok', gambar='$gambar' WHERE kode='$kode'" or die(mysqli_error());
 			$res=mysqli_query($koneksi, $sql) or die (mysqli_error());
 			//echo "Gambar berhasil dikirim ke direktori".$gambar;
             echo "<script>alert('Data Prroduk berhasil diupdate!'); window.location = 'produk.php'</script>";	   
